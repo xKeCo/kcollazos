@@ -1,65 +1,8 @@
 import { Badge } from '@/components/Badge';
-import { Github, Linkedin, Mail, ScrollText, Twitter } from 'lucide-react';
+import { footerLinks } from '../data/footerLinks';
+import { projectsInfo } from '../data/projectsInfo';
 
 export default function Home() {
-  const links = [
-    {
-      title: 'LinkedIn',
-      url: 'https://linkedin.com/in/kevcollazos/',
-      icon: <Linkedin size={16} />,
-    },
-    {
-      title: 'GitHub',
-      url: 'https://github.com/xKeCo',
-      icon: <Github size={16} />,
-    },
-    {
-      title: 'Twitter',
-      url: 'https://x.com/kcollazos_',
-      icon: <Twitter size={16} />,
-    },
-    {
-      title: 'hi@kcollazos.com',
-      url: 'mailto:kevcollazos@gmail.com',
-      icon: <Mail size={16} />,
-    },
-    {
-      title: 'CV',
-      url: 'https://cv.kevincollazos.com/',
-      icon: <ScrollText size={16} />,
-    },
-  ];
-
-  const projects = [
-    {
-      title: 'Building',
-      data: [
-        {
-          name: 'Moss',
-          description: 'The new way to maintain digital medical records.',
-          url: 'https://mossdental.vercel.app/',
-        },
-      ],
-    },
-    {
-      title: 'Past projects',
-      data: [
-        {
-          name: 'AcreditX',
-          description:
-            'A platform for universities to manage activities for high-quality program accreditation.',
-          url: 'https://www.kevincollazos.com/project/AcrediX%20-%20UAO',
-        },
-        {
-          name: 'Parqueeventos',
-          description:
-            'A website that allows you to see upcoming events in the city of Cali, Colombia.',
-          url: 'https://www.kevincollazos.com/project/AcrediX%20-%20UAO',
-        },
-      ],
-    },
-  ];
-
   return (
     <main className="flex flex-col items-start justify-center flex-none gap-0 h-min overflow-visible">
       <div className="flex flex-col items-start justify-center gap-20 pb-20">
@@ -86,13 +29,13 @@ export default function Home() {
 
       {/* Projects */}
       <div className="grid min-[425px]:grid-cols-2 items-start justify-start gap-8 w-full pb-20">
-        {projects.map((project) => (
+        {projectsInfo.map((project) => (
           <div key={project.title} className="flex flex-col items-start justify-start gap-6">
             <h2 className="text-sm font-medium">{project.title}</h2>
 
             <div className="flex flex-col items-start justify-start gap-6 group/item">
               {project.data.map((data) => (
-                <>
+                <div className="flex flex-col gap-5 items-start" key={data.url}>
                   <a
                     key={data.url}
                     href={data.url}
@@ -105,8 +48,8 @@ export default function Home() {
                       <div className="h-px bg-white/40 rounded-2xl group-hover/link:bg-neutral-100 transition-colors duration-200 ease-in-out"></div>
                     </div>
                   </a>
-                  <p className="text-base leading-7 text-balance">{data.description}</p>
-                </>
+                  <p className="text-base leading-7 text-pretty">{data.description}</p>
+                </div>
               ))}
             </div>
           </div>
@@ -118,7 +61,7 @@ export default function Home() {
         <h2 className="text-sm font-medium">Social</h2>
 
         <div className="flex items-center justify-start flex-wrap gap-4">
-          {links.map((link) => (
+          {footerLinks.map((link) => (
             <Badge key={link.url} title={link.title} url={link.url} icon={link.icon} />
           ))}
         </div>
