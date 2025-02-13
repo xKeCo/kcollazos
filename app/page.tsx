@@ -1,11 +1,10 @@
 import { Badge } from '@/components/Badge';
 import { footerLinks } from '../data/footerLinks';
-import { projectsInfo } from '../data/projectsInfo';
 
 export default function Home() {
   return (
     <main className="flex flex-col items-start justify-center flex-none gap-0 h-min overflow-visible">
-      <div className="flex flex-col items-start justify-center gap-20 pb-20">
+      <div className="flex flex-col items-start justify-center gap-20 pb-12">
         <h1>&quot;Logo&quot;</h1>
 
         <div className="flex flex-col items-start justify-center gap-6">
@@ -25,35 +24,6 @@ export default function Home() {
             cultivate a strong online presence.
           </p>
         </div>
-      </div>
-
-      {/* Projects */}
-      <div className="grid min-[425px]:grid-cols-2 items-start justify-start gap-8 w-full pb-20">
-        {projectsInfo.map((project) => (
-          <div key={project.title} className="flex flex-col items-start justify-start gap-6">
-            <h2 className="text-sm font-medium">{project.title}</h2>
-
-            <div className="flex flex-col items-start justify-start gap-6 group/item">
-              {project.data.map((data) => (
-                <div className="flex flex-col gap-5 items-start" key={data.url}>
-                  <a
-                    key={data.url}
-                    href={data.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex flex-col items-start justify-start gap-2 group/link"
-                  >
-                    <div className="text-base text-neutral-100">
-                      <h1>{data.name}</h1>
-                      <div className="h-px bg-white/40 rounded-2xl group-hover/link:bg-neutral-100 transition-colors duration-200 ease-in-out"></div>
-                    </div>
-                  </a>
-                  <p className="text-base leading-7 text-pretty">{data.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
       </div>
 
       {/* Social */}
