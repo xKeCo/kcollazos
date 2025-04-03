@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, ScrollText, Twitter } from 'lucide-react';
+import { Github, Linkedin, Mail, ScrollText, Twitter } from 'lucide-react'
 
 export const footerLinks = [
   {
@@ -17,13 +17,13 @@ export const footerLinks = [
     icon: <Twitter size={16} />,
   },
   {
-    title: 'hi@kcollazos.com',
-    url: 'mailto:kevcollazos@gmail.com',
+    title: 'hi@kcollazos.me',
+    url: 'mailto:hi@kcollazos.me',
     icon: <Mail size={16} />,
   },
   {
     title: 'CV',
-    url: 'https://cv.kevincollazos.com/',
+    url: 'https://cv.kcollazos.me/',
     icon: <ScrollText size={16} />,
   },
-];
+]
